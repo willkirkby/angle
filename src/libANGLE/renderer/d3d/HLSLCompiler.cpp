@@ -179,7 +179,7 @@ gl::Error HLSLCompiler::compileToBinary(gl::InfoLog &infoLog, const std::string 
                                         const std::vector<CompileConfig> &configs, const D3D_SHADER_MACRO *overrideMacros,
                                         ID3DBlob **outCompiledBlob, std::string *outDebugInfo)
 {
-    ANGLE_TRY(ensureInitialized());
+    ASSERT(mInitialized);
 
 #if !defined(ANGLE_ENABLE_WINDOWS_STORE)
     ASSERT(mD3DCompilerModule);
